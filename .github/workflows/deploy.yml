@@ -1,0 +1,12 @@
+# on push to master, build project on server 
+# push files to s3 bucket
+
+name: npm-run-build
+on: [push]
+jobs:
+  build-application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm run build
